@@ -2,8 +2,13 @@ import express, { Application } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
+// Routes
+import UserRoutes from '../routes/user-routes';
+
 export class MainServer {
     // Endpoints
+    private EndPointUser: string = '/user';
+    private EndPointTask: string = '/task';
 
     // Variables
     private app: Application;
@@ -33,6 +38,7 @@ export class MainServer {
     }
 
     asingRoutes() {
+        this.app.use(this.EndPointUser, UserRoutes);
         this.app.use('/', (req, res) => {
             res.status(200).json({
                 status: 'OK',
