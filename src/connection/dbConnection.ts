@@ -1,12 +1,13 @@
 import mongoose from 'mongoose';
 
-const DataBase: string | undefined = process.env.DATABASE;
+const dataBaseUrl: string | undefined = process.env.DATABASE;
+
 
 mongoose.set('strictQuery', false);
 
 mongoose
-    .connect(`mongodb://${DataBase}`)
-    .then((db) => console.log('DB is connected'))
-    .catch((err) => console.error(err));
+    .connect(`mongodb://${dataBaseUrl}`)
+    .then((db: any) => console.log('DB is connected'))
+    .catch((err: any) => console.error(err));
 
 const conexion = mongoose.Collection;

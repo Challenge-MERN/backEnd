@@ -1,6 +1,5 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv').config();
+const connection = require('./src/connection/dbConnection');
 import { MainServer } from './src/server/main-server';
-
-dotenv.config();
 
 const server = new MainServer(process.env.PORT || '3000')
