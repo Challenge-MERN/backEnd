@@ -4,6 +4,7 @@ import cors from 'cors';
 
 // Routes
 import UserRoutes from '../routes/user-routes';
+import TaskRoutes from '../routes/task-routes';
 
 export class MainServer {
     // Endpoints
@@ -39,6 +40,7 @@ export class MainServer {
 
     asingRoutes() {
         this.app.use(this.EndPointUser, UserRoutes);
+        this.app.use(this.EndPointTask, TaskRoutes);
         this.app.use('/', (req, res) => {
             res.status(200).json({
                 status: 'OK',
