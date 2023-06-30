@@ -24,7 +24,7 @@ const createUser = async (userName: string, mail: string, password: string) => {
             } else {
                 return {
                     status: false,
-                    data: 'Email utilizado en otro usuario'
+                    data: 'Email utilizado por otro usuario'
                 }
             }
         } else {
@@ -51,8 +51,7 @@ const authUser = async (userName: string, password: string) => {
                     name: user.User_Name,
                     email: user.Mail,
                     accessToken: accessToken,
-                    expiresIn: expiresIn,
-                    ok: true
+                    expiresIn: expiresIn
                 };
                 return {
                     status: AUTH_USER_RESULT.SUCCESS,
