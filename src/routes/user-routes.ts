@@ -1,6 +1,7 @@
 import express from 'express';
 import UserController from '../controllers/user-controller';
 import { createUserRules, validateFields, authUserRules } from '../middlewares/user/validate-fields';
+import { validateJwt } from '../middlewares/validate-token';
 
 const router = express.Router();
 
