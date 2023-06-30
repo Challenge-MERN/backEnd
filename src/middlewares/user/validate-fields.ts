@@ -19,12 +19,6 @@ export const authUserRules = () => {
     ];
 }
 
-export const userParams = () => {
-    return [
-        param('UserName', 'UserName es obligatorio').not().isEmpty(),
-    ];
-}
-
 // Validations
 export const validateFields = (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
