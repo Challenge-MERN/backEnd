@@ -6,10 +6,10 @@
 <pre>PORT = 
 DATABASE = 
 SECRET_KEY = 
-URL_RESTOREPWD = <front-end URL where it was deployed>/restore-password
-EMAIL_SERVICE = <email to be used for the service>
+URL_RESTOREPWD = (front-end URL where it was deployed)/restore-password
+EMAIL_SERVICE = (email to be used for the service)
 EMAIL_SERVICE_PWD = 
-SERVICE = <email type> example: For Gmail mail, use gmail
+SERVICE = (email type) example: For Gmail email, use gmail
 </pre>
 
 # Run
