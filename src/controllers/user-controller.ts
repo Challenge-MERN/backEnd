@@ -89,12 +89,12 @@ const validateEmailAvailable = async (req: Request, res: Response) => {
         if (result)
             res.status(200).json({
                 status: 'OK',
-                data: 'Nombre de usuario disponible'
+                data: 'Email disponible'
             });
         else
             res.status(200).json({
                 status: 'FALSE',
-                data: 'Nombre actualmente utilizado'
+                data: 'Email asociado a otra cuenta'
             });
     } catch (err) {
         let message = 'Unknown Error';
@@ -110,7 +110,6 @@ const forgotPassword = async (req: Request, res: Response) => {
     try {
         const { UserName } = req.params;
         const { status, data } = await UserService.forgotPassword(UserName);
-        console.log(status, ' ' , data)
         status
             ?
             res.status(200).json({

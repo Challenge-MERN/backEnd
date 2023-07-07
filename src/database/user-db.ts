@@ -4,7 +4,7 @@ const createUser = async (userName: string, mail: string, password: string) => {
     try {
         const newUser = new UserModel({ User_Name: userName, Mail: mail, Password: password });
         if (await newUser.save()) {
-            return { status: true, data: 'Registro con éxito!' };
+            return { status: true, data: newUser };
         }
     } catch (err) {
         let message = 'Unknown Error';

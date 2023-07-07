@@ -17,9 +17,17 @@ const createUser = async (userName: string, mail: string, password: string) => {
             if (verifyEmail) {
                 const newPassword = bcrypt.hashSync(password);
                 const res = await UserDB.createUser(userName.toUpperCase(), mail, newPassword);
+                const expiresIn = '5h';
+                const accessToken = jwt.sign({ id: res?.data.id }, SECRET_KEY, { expiresIn: expiresIn });
+                const dataUser = {
+                    name: res?.data.User_Name,
+                    email: res?.data.Mail,
+                    accessToken: accessToken,
+                    expiresIn: expiresIn
+                };
                 return {
                     status: res?.status,
-                    data: res?.data
+                    data: dataUser
                 }
             } else {
                 return {

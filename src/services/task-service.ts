@@ -12,7 +12,7 @@ const createTask = async (newTask: TaskI) => {
 
 const changeTaskStatus = async (userName: string, taskName: string) => {
     try {
-        const actualDate = new Date().toISOString();
+        const actualDate = new Date().toLocaleDateString().split(/T/)[0];
         return TaskDB.changeTaskStatus(userName, taskName, TASK_STATUS.FINISH, actualDate);
     } catch (err) {
         throw err;
