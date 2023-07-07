@@ -111,9 +111,6 @@ const getCompletedTasksByUser = async (userName: string) => {
         const tasksCompleted = await TaskModel.find({
             User_Name: userName,
             Status: true
-        }, {
-
-            _id: 0
         });
         return { tasksCompleted };
     } catch (err) {
